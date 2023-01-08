@@ -31,7 +31,32 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(express.static('public'));
 
-//const userRouter = require('./users');
-//app.use('/api/', userRouter);
+const customerRouter = require('./Tables/Customer');
+app.use('/customer/', customerRouter);
+
+const billRouter = require('./Tables/Bill');
+app.use('/bill/', billRouter);
+
+const employeeRouter = require('./Tables/Employee');
+app.use('/employee/', employeeRouter);
+
+const orderLineRouter = require('./Tables/OrderLine');
+app.use('/orderLine/', orederLineRouter);
+
+const productRouter = require('./Tables/Product');
+app.use('/product/', productRouter);
+
+const saleRouter = require('./Tables/Sale');
+app.use('/Sale/', saleRouter);
+
+const supplierRouter = require('./Tables/Supplier');
+app.use('/supplier/', supplierRouter);
+
+const TurneryRouter = require('./Tables/Turnery');
+app.use('/turnery/', TurneryRouter);
+
+
+
+
 
 app.listen(port, () => { console.log(`Server is running on port : ${port}`)});
